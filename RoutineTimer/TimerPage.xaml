@@ -1,0 +1,61 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="RoutineTimer.TimerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True" Loaded="TimerPage_Loaded">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="TIMER" Style="{StaticResource PhoneTextNormalStyle}" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock x:Name="txtClock" TextAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Begin Timing" VerticalAlignment="Top" Height="208" Width="456" FontSize="75" Margin="0,-12,0,0"/>
+            <Button x:Name="button1" Content=" Start &#xA;Timer" HorizontalAlignment="Left" 
+                    Margin="129,131,0,0" VerticalAlignment="Top" Click="button1_Click" 
+                    RenderTransformOrigin="0.148,0.692" Height="145" Width="189"
+                    BorderBrush="Green" BorderThickness="10" FontSize="32"/>
+            <TextBlock x:Name="FinalTimeText" HorizontalAlignment="Left" Margin="37,454,0,0" 
+                       TextWrapping="Wrap" Text="Final Time:" VerticalAlignment="Top" 
+                       Height="32" Width="162" Visibility="Collapsed"/>
+            <TextBlock x:Name="TotalRecordsText" HorizontalAlignment="Left" 
+                       Margin="37,517,0,0" TextWrapping="Wrap" Text="Total Records:" 
+                       VerticalAlignment="Top" Height="32" Width="162" Visibility="Collapsed"/>
+            <TextBlock x:Name="timeText" HorizontalAlignment="Left" Margin="239,454,0,0" 
+                       TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="162" TextAlignment="Center" 
+                       Visibility="Collapsed"/>
+            <TextBlock x:Name="recordCountText" HorizontalAlignment="Left" 
+                       Margin="239,512,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+                       Height="32" Width="162" TextAlignment="Center" Visibility="Collapsed"/>
+            <TextBlock x:Name="recordDate" HorizontalAlignment="Left" 
+            	Margin="239,549,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+            	Height="32" Width="162" TextAlignment="Center" Visibility="Collapsed"/>
+            
+            <Button x:Name="graphButton" Content="View Graph" HorizontalAlignment="Left" 
+                    Margin="87,614,0,0" VerticalAlignment="Top" 
+                    RenderTransformOrigin="-0.075,0.5" Width="293" 
+                    Click="graphButton_Click" Visibility="Collapsed"/>
+            
+
+            <!--<Button x:Name="anyName1" />-->
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
